@@ -27,7 +27,7 @@ services:
 
   db:
     image: mysql:5.7
-    container_name: mysql
+    container_name: db-mysql
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
@@ -37,7 +37,7 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: ${DB_ALLOW_EMPTY_PASSWORD}
       MYSQL_RANDOM_ROOT_PASSWORD: ${DB_RANDOM_ROOT_PASSWORD}
     ports:
-      - 3306:${DB_PORT}
+      - ${DB_PORT}:3306
     volumes:
       - dbdata:/var/lib/mysql
     networks:

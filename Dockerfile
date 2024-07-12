@@ -35,4 +35,5 @@ RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
 RUN composer install --no-dev --optimize-autoloader
 
 EXPOSE 9000
+
 CMD ["php-fpm"]
