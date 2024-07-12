@@ -1,0 +1,11 @@
+// Functions first
+@import "~bootstrap/scss/functions";
+
+// Import Bootstrap itself
+@import "~bootstrap/scss/bootstrap";
+
+// Variable overrides first
+
+// Required Bootstrap imports
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";

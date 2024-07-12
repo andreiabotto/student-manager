@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'manager-user'),
+    'name' => env('APP_NAME', 'user-manager'),
 
     /*
     |--------------------------------------------------------------------------
