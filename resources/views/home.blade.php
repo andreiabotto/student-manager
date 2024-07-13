@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
-@section('title', 'Page Title')
- 
-@section('sidebar')
-    @parent
- 
-    <p>This is appended to the master sidebar.</p>
-@endsection
- 
+@section('title', 'User manager')
+
+@section('title_card', 'Usuários')
+
 @section('content')
-    <p>This is my body content.</p>
+    @include('layouts/users/table')
+@endsection
+
+@section('menu_data')
+    @include('layouts/users/menu')
 @endsection

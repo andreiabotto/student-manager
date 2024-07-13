@@ -21,6 +21,8 @@
     "dependencies": {
         "@popperjs/core": "^2.11.8",
         "bootstrap": "^5.3.3",
-        "jquery": "^3.7.1"
+        "bootstrap-icons": "^1.11.3",
+        "jquery": "^3.7.1",
+        "swagger-ui-dist": "^5.17.14"
     }
 }

@@ -1,11 +1,26 @@
 // Functions first
 @import "~bootstrap/scss/functions";
 
+// Variable overrides first
+
 // Import Bootstrap itself
 @import "~bootstrap/scss/bootstrap";
 
-// Variable overrides first
+// Import Bootstrap Icons
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 
 // Required Bootstrap imports
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/variables-dark";
+@import "~bootstrap/scss/maps";
 @import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/root";
+
+// Optional components
+@import "~bootstrap/scss/utilities";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/utilities/api";
+@import "~bootstrap/scss/nav";
