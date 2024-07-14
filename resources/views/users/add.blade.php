@@ -2,12 +2,12 @@
 
 @section('title', 'User manager')
 
-@section('title_card', 'Usuários')
+@section('title_card', 'Adicionar usuário')
 
 @section('content')
-    @include('layouts/users/table')
+    @include('layouts.users.form')
 @endsection
 
 @section('menu_data')
-    @include('layouts/users/menu')
+
 @endsection
