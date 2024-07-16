@@ -28,4 +28,17 @@ class StoreUserRequest extends FormRequest
             'email' => 'required|string|email|max:255|unique:users'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.required' => 'Campo Nome precisa ser preenchido',
+            'name.string' => 'Campo Nome precisa ser texto',
+            'name.max:255' => 'Campo Nome precisa ter mais do 255 caracteres',
+            'email.required' => 'Campo E-mail precisa ser preenchido',
+            'email.string' => 'Campo E-mail precisa ser texto',
+            'email.email' => 'Campo E-mail precisa ser valido',
+            'email.unique' => 'Campo E-mail ja existe'
+        ];
+    }
 }

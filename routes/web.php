@@ -21,7 +21,7 @@ Route::get('/add', function () {
     return view('users/add');
 });
 
-Route::get('/edit', function () {
+Route::get('/edit/{id}', function () {
     return view('users/add');
 });
 

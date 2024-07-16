@@ -7,6 +7,8 @@ use App\User\Application\Services\Interfaces\UserServiceInterface;
 use App\User\Infrastructure\Adapter\Http\Requests\StoreUserRequest;
 use App\User\Infrastructure\Adapter\Http\Requests\UpdateUserRequest;
 use App\User\Infrastructure\Adapter\Http\Responses\UserResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 /**
  * @OA\Info(
@@ -37,9 +39,18 @@ class UserController extends Controller
      *     )
      * )
      */
-    public function index()
+    public function index(Request $request)
     {
-        $users = $this->userService->getAllUsers();
+        $params = $request->all();
+        if($params) {
+            $params = $params['values'];
+
+            if (is_null($params[1])) {
+                $params = [];
+            }
+        }
+
+        $users = $this->userService->getAllUsers($params);
         return UserResponse::collection($users);
     }
 

@@ -17,10 +17,11 @@ class UserResponse extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'situacao' => $this->email,
-            'admission_date' => $this->admission_date->toDateTimeString(),
-            'created_at' => $this->created_at->toDateTimeString(),
-            'updated_at' => $this->updated_at->toDateTimeString(),
+            'email' => $this->email,
+            'situacao' => $this->situacao,
+            'admission_date' => $this->admission_date->format('d/m/Y H:i:s'),
+            'created_at' => $this->created_at->format('d/m/Y H:i:s'),
+            'updated_at' => $this->updated_at->format('d/m/Y H:i:s'),
         ];
     }
 }

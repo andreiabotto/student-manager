@@ -4,6 +4,7 @@ namespace App\User\Application\Services;
 
 use App\User\Repositories\Interfaces\UserRepositoryInterface;
 use App\User\Application\Services\Interfaces\UserServiceInterface;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
 use App\Models\User;
 
@@ -16,9 +17,9 @@ class UserService implements UserServiceInterface
         $this->userRepository = $userRepository;
     }
 
-    public function getAllUsers(): Collection
+    public function getAllUsers(?array $params = []): Collection
     {
-        return $this->userRepository->all();
+        return $this->userRepository->all($params);
     }
 
     public function getUserById(int $id): ?User
@@ -28,6 +29,9 @@ class UserService implements UserServiceInterface
 
     public function createUser(array $data): User
     {
+        $data['situacao'] = 0;
+        $data['admission_date'] = Carbon::now();
+
         return $this->userRepository->create($data);
     }
 

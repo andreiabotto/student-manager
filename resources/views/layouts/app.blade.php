@@ -12,13 +12,9 @@
 @include('layouts/components/nav')
 
 <body class="h-100">
-
     <div class="row ms-0 me-0 h-100">
-        <div class="col-2 ps-0">
-            @include('layouts/components/menu')
-        </div>
         <div class="col">
-            <div id="app" class="container">
+            <div id="app" class="container-fluid">
                 <div class="row">
                     <div class="col">
                         <div class="mt-3">
@@ -35,7 +31,7 @@
                                         <h1 class="me-1 text-end">@yield('title_card')</h1>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row mt-3">
                                     <div class="col">
                                         @yield('menu_data')
                                     </div>
@@ -53,8 +49,8 @@
         </div>
     </div>
 
-    <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>
 

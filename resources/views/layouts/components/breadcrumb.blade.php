@@ -1,5 +1,11 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">@yield('title-card')</li>
+      @if(request()->path() == '/')
+          @include('.layouts/users/breadcrumb/list')
+      @elseif (request()->path() == 'add')
+          @include('.layouts/users/breadcrumb/add')
+      @elseif (request()->path() == 'edit')
+          @include('.layouts/users/breadcrumb/edit')
+      @endif
   </ol>
 </nav>

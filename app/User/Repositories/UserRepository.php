@@ -8,8 +8,12 @@ use Illuminate\Database\Eloquent\Collection;
 
 class UserRepository implements UserRepositoryInterface
 {
-    public function all(): Collection
+    public function all(?array $params = []): Collection
     {
+        if ($params) {
+            return User::where($params[0], 'LIKE', '%'.$params[1].'%')->get();
+        }
+
         return User::all();
     }
 

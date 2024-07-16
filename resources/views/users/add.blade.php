@@ -2,10 +2,15 @@
 
 @section('title', 'User manager')
 
-@section('title_card', 'Adicionar usuário')
+@if (request()->path() == 'add')
+    @section('title_card', 'Adicionar usuário')
+@else (request()->path() == 'edit')
+    @section('title_card', 'Editar usuário')
+@endif
 
 @section('content')
     @include('layouts.users.form')
+
 @endsection
 
 @section('menu_data')

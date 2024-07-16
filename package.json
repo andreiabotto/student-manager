@@ -23,6 +23,7 @@
         "bootstrap": "^5.3.3",
         "bootstrap-icons": "^1.11.3",
         "jquery": "^3.7.1",
-        "swagger-ui-dist": "^5.17.14"
+        "swagger-ui-dist": "^5.17.14",
+        "sweetalert2": "^11.12.2"
     }
 }

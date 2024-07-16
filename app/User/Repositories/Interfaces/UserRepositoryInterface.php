@@ -7,7 +7,7 @@ use App\Models\User;
 
 interface UserRepositoryInterface
 {
-    public function all(): Collection;
+    public function all(?array $params): Collection;
 
     public function find(int $id): ?User;
 
