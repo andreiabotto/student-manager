@@ -297,4 +297,44 @@ return [
             'L5_SWAGGER_CONST_HOST' => env('L5_SWAGGER_CONST_HOST', 'http://localhost:8000'),
         ],
     ],
+    'components' => [
+        'schemas' => [
+            'User' => [
+                'type' => 'object',
+                'properties' => [
+                    'id' => [
+                        'type' => 'integer',
+                        'example' => 1,
+                    ],
+                    'name' => [
+                        'type' => 'string',
+                        'example' => 'John Doe',
+                    ],
+                    'email' => [
+                        'type' => 'string',
+                        'example' => 'john.doe@example.com',
+                    ],
+                    'situacao' => [
+                        'type' => 'integer',
+                        'example' => '0',
+                    ],
+                    'admission_date' => [
+                        'type' => 'string',
+                        'format' => 'date-time',
+                        'example' => '2021-01-01T00:00:00Z',
+                    ],
+                    'created_at' => [
+                        'type' => 'string',
+                        'format' => 'date-time',
+                        'example' => '2021-01-01T00:00:00Z',
+                    ],
+                    'updated_at' => [
+                        'type' => 'string',
+                        'format' => 'date-time',
+                        'example' => '2021-01-01T00:00:00Z',
+                    ],
+                ],
+            ],
+        ],
+    ],
 ];

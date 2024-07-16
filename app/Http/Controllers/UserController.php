@@ -1,14 +1,12 @@
 <?php
 
-namespace App\User\Infrastructure\Adapter\Http\Controllers;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\User\Application\Services\Interfaces\UserServiceInterface;
-use App\User\Infrastructure\Adapter\Http\Requests\StoreUserRequest;
-use App\User\Infrastructure\Adapter\Http\Requests\UpdateUserRequest;
-use App\User\Infrastructure\Adapter\Http\Responses\UserResponse;
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
+use App\Http\Responses\UserResponse;
+use App\Services\Interfaces\UserServiceInterface;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 /**
  * @OA\Info(
@@ -95,13 +93,23 @@ class UserController extends Controller
      *     summary="Create a new user",
      *     description="Creates a new user",
      *     @OA\RequestBody(
-     *         description="User object that needs to be added",
-     *         required=true
-     *     ),
+     *          required=true,
+     *          @OA\JsonContent(
+     *              type="object",
+     *              @OA\Property(property="name", type="string", example="John Doe"),
+     *              @OA\Property(property="email", type="string", example="john.doe@example.com"),
+     *              @OA\Property(property="situacao", type="string", example="0"),
+     *              @OA\Property(property="admission_date", type="string", example="2024-07-18T12:20:14")
+     *          )
+     *      ),
      *     @OA\Response(
      *         response=201,
      *         description="Successful response"
-     *     )
+     *     ),
+     *     @OA\Response(
+     *          response=422,
+     *          description="Invalid data"
+     *      )
      * )
      */
     public function store(StoreUserRequest $request)
@@ -124,13 +132,23 @@ class UserController extends Controller
      *         @OA\Schema(type="integer")
      *     ),
      *     @OA\RequestBody(
-     *         description="User object that needs to be updated",
-     *         required=true
-     *     ),
+     *          required=true,
+     *          @OA\JsonContent(
+     *              type="object",
+     *              @OA\Property(property="name", type="string", example="John Doe"),
+     *              @OA\Property(property="email", type="string", example="john.doe@example.com"),
+     *              @OA\Property(property="situacao", type="string", example="0"),
+     *              @OA\Property(property="admission_date", type="string", example="2024-07-18T12:20:14")
+     *          )
+     *      ),
      *     @OA\Response(
      *         response=200,
      *         description="Successful response"
      *     ),
+     *      @OA\Response(
+     *          response=422,
+     *          description="Invalid data"
+     *      ),
      *     @OA\Response(
      *         response=404,
      *         description="User not found"

@@ -32,6 +32,11 @@
                         var user = data.data;
                         $('#detName').text(user.name);
                         $('#detEmail').text(user.email);
+
+                        if(user.situacao == 1) { user.situacao = 'Aprovado';}
+                        else if(user.situacao == 2) { user.situacao = 'Reprovado';}
+                        else{ user.situacao = 'Em análise';}
+
                         $('#detSituacao').text(user.situacao);
                         $('#detDtAdmission').text(user.admission_date);
                     },

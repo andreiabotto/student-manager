@@ -14,7 +14,7 @@
                 ],
                 "summary": "Get list of users",
                 "description": "Returns a list of users",
-                "operationId": "ea49177363f136caf5d937b0831f0be4",
+                "operationId": "c457726701591d1183b53aa71fc13441",
                 "responses": {
                     "200": {
                         "description": "Successful response"
@@ -27,14 +27,41 @@
                 ],
                 "summary": "Create a new user",
                 "description": "Creates a new user",
-                "operationId": "5325b57c96cdd6ba655812619fadffdf",
+                "operationId": "592819a0265360b2014512d6dbfaf0e7",
                 "requestBody": {
-                    "description": "User object that needs to be added",
-                    "required": true
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "john.doe@example.com"
+                                    },
+                                    "situacao": {
+                                        "type": "string",
+                                        "example": "0"
+                                    },
+                                    "admission_date": {
+                                        "type": "string",
+                                        "example": "2024-07-18T12:20:14"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
                 },
                 "responses": {
                     "201": {
                         "description": "Successful response"
+                    },
+                    "422": {
+                        "description": "Invalid data"
                     }
                 }
             }
@@ -46,7 +73,7 @@
                 ],
                 "summary": "Get user by ID",
                 "description": "Returns a user by ID",
-                "operationId": "5c9861084ca334a7c243154884954d61",
+                "operationId": "36a33ff774d5cba33c039dec2c3e0287",
                 "parameters": [
                     {
                         "name": "id",
@@ -73,7 +100,7 @@
                 ],
                 "summary": "Update an existing user",
                 "description": "Updates an existing user",
-                "operationId": "286516ba1e28b23716096f788d88c958",
+                "operationId": "b9091397c8b25f12c6adb74be6ce3a5a",
                 "parameters": [
                     {
                         "name": "id",
@@ -86,12 +113,39 @@
                     }
                 ],
                 "requestBody": {
-                    "description": "User object that needs to be updated",
-                    "required": true
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "name": {
+                                        "type": "string",
+                                        "example": "John Doe"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "john.doe@example.com"
+                                    },
+                                    "situacao": {
+                                        "type": "string",
+                                        "example": "0"
+                                    },
+                                    "admission_date": {
+                                        "type": "string",
+                                        "example": "2024-07-18T12:20:14"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
                 },
                 "responses": {
                     "200": {
                         "description": "Successful response"
+                    },
+                    "422": {
+                        "description": "Invalid data"
                     },
                     "404": {
                         "description": "User not found"
@@ -104,7 +158,7 @@
                 ],
                 "summary": "Delete a user",
                 "description": "Deletes a user",
-                "operationId": "0199cb20b262696248c9ec8ee36a8320",
+                "operationId": "fa56cffde745d3f152f95cbacd936c0b",
                 "parameters": [
                     {
                         "name": "id",

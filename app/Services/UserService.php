@@ -1,12 +1,12 @@
 <?php
 
-namespace App\User\Application\Services;
+namespace App\Services;
 
-use App\User\Repositories\Interfaces\UserRepositoryInterface;
-use App\User\Application\Services\Interfaces\UserServiceInterface;
+use App\Models\User;
+use App\Repositories\Interfaces\UserRepositoryInterface;
+use App\Services\Interfaces\UserServiceInterface;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Collection;
-use App\Models\User;
 
 class UserService implements UserServiceInterface
 {
