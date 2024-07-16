@@ -15,9 +15,6 @@
                         <li><a class="dropdown-item" href="/add">Cadastro</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sobre</a>
-                </li>
             </ul>
         </div>
     </div>
