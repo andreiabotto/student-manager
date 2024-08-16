@@ -2,29 +2,29 @@
 
 namespace App\Repositories;
 
-use App\Models\User;
-use App\Repositories\Interfaces\UserRepositoryInterface;
+use App\Models\Student;
+use App\Repositories\Interfaces\StudentRepositoryInterface;
 use Illuminate\Database\Eloquent\Collection;
 
-class UserRepository implements UserRepositoryInterface
+class StudentRepository implements StudentRepositoryInterface
 {
     public function all(?array $params = []): Collection
     {
         if ($params) {
-            return User::where($params[0], 'LIKE', '%'.$params[1].'%')->get();
+            return Student::where($params[0], 'LIKE', '%'.$params[1].'%')->get();
         }
 
-        return User::all();
+        return Student::all();
     }
 
-    public function find(int $id): ?User
+    public function find(int $id): ?Student
     {
-        return User::find($id);
+        return Student::find($id);
     }
 
-    public function create(array $data): User
+    public function create(array $data): Student
     {
-        return User::create($data);
+        return Student::create($data);
     }
 
     public function update(int $id, array $data): bool

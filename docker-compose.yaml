@@ -4,8 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: user-manager-app
-    container_name: user-manager-app
+    image: student-manager-app
+    container_name: student-manager-app
     restart: unless-stopped
     working_dir: /var/www
     volumes:

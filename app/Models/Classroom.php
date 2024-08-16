@@ -2,23 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class User extends Authenticatable
+class Classroom extends Model
 {
     use HasFactory;
-    
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'situacao',
-        'admission_date',
+        'number'
     ];
 
     /**
@@ -27,9 +25,12 @@ class User extends Authenticatable
      * @var array<string, string>
      */
     protected $casts = [
-        'name' => 'string',
-        'email' => 'string',
-        'situacao' => 'integer',
-        'admission_date' => 'datetime',
+        'number' => 'integer'
     ];
+
+    public function student(): HasMany
+    {
+        return $this->hasMany(Student::class);
+    }
+
 }

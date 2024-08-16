@@ -13,15 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('users/home');
-});
 
-Route::get('/add', function () {
-    return view('users/add');
-});
-
-Route::get('/edit/{id}', function () {
-    return view('users/add');
-});
 

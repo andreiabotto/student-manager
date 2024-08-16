@@ -1,10 +1,9 @@
-## User manager
+## Student manager
 
-This project is a basic web application designed to demonstrate the implementation of CRUD (Create, Read, Update, Delete) operations for a "User" table. The application is built using PHP, HTML, CSS, and JavaScript, providing a simple and intuitive interface for managing user data.
+This project is a basic web application designed to demonstrate the implementation of CRUD (Create, Read, Update, Delete) operations for a "Student" table. The application is built using PHP, HTML, CSS, and JavaScript, providing a simple and intuitive interface for managing student data.
 
 ### Technologies Used
  - Backend: PHP (Laravel)
- - Frontend: HTML, CSS (Bootstrap), JavaScript (Ajax and JQuery)
  - Database: MySQL (or any SQL-based database)
 
 ## Installation
